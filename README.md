@@ -1,6 +1,14 @@
-# rust-new-project-template
-A good starting point for a new Rust project
+# IDS721-project1: What is your Chinese zodiac?
+
+##
+The Chinese zodiac, or Sheng Xiao, is a repeating 12-year cycle of animal signs and their ascribed attributes, based on the lunar calendar. In order, the zodiac animals are: Rat, Ox, Tiger, Rabbit, Dragon, Snake, Horse, Goat, Monkey, Rooster, Dog, Pig.
+
+The Lunar New Year, or Spring Festival, marks the transition from one animal to the next. 2022 is the year of the Tiger, which began on February 1st. 2022, and ends on January 21st, 2023. FJanuary 22nd, 2023 (Chinese New Year) signaled the start of the year of the Rabbit.
+
+Therefore, people's birth year decided their Chinese zodiac.
+
 
 ## References
 
-* [rust-cli-template](https://github.com/kbknapp/rust-cli-template)
+https://chinesenewyear.net/zodiac/
+
