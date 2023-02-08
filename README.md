@@ -1,7 +1,5 @@
 # IDS721-project1: What is your Chinese zodiac?
 
-## week 1
-* Push source code to Github
 
 ## Happy Chinese New Year!
 The Chinese zodiac, or Sheng Xiao, is a repeating 12-year cycle of animal signs and their ascribed attributes, based on the lunar calendar. In order, the zodiac animals are: Rat, Ox, Tiger, Rabbit, Dragon, Snake, Horse, Goat, Monkey, Rooster, Dog, Pig.
@@ -16,7 +14,9 @@ Therefore, people's birth year decided their Chinese zodiac.
 https://chinesenewyear.net/zodiac/\
 
 
-## week 2
+## Goal
+## week 1
+* Be familiar with pushing source code to Github
 * Configure Build System to Deploy changes
 * Use Azure (Azure App Services)
 
