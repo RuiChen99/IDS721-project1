@@ -15,8 +15,7 @@ https://chinesenewyear.net/zodiac/\
 
 
 ## Goal
-## week 1
 * Be familiar with pushing source code to Github
 * Configure Build System to Deploy changes
-* Use Azure (Azure App Services)
+* Use AWS to deploy (EC2)
 
