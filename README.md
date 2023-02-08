@@ -15,6 +15,7 @@ https://chinesenewyear.net/zodiac/\
 
 
 ## Goal
+* Learn to develop with rust
 * Be familiar with pushing source code to Github
 * Configure Build System to Deploy changes
 * Use AWS to deploy (EC2)
