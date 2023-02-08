@@ -1,35 +1,87 @@
-use std::io;
-use std::io::Write;
+// //Calculator Microservice
+// use actix_web::{get, web, App, HttpResponse, HttpServer, Responder};
 
-fn main() {
-    println!("Happy Chinese New Year!  Do you know what your Chinese Zodiac is?");
+// #[get("/")]
+// async fn index() -> impl Responder {
+//     HttpResponse::Ok().body("This is a calculator microservice")
+// }
 
-    let mut input = String::new();
-    let x: i64;
+// //library add route using lib.rs
+// #[get("/add/{a}/{b}")]
+// async fn add(info: web::Path<(i32, i32)>) -> impl Responder {
+//     let result = calc::add(info.0, info.1);
+//     HttpResponse::Ok().body(result.to_string())
+// }
 
-    print!("Enter your birth year: ");
-    io::stdout().flush().unwrap();
-    io::stdin().read_line(&mut input).unwrap();
-    x = input.trim().parse::<i64>().unwrap();
+// //library subtract route using lib.rs
+// #[get("/subtract/{a}/{b}")]
+// async fn subtract(info: web::Path<(i32, i32)>) -> impl Responder {
+//     let result = calc::subtract(info.0, info.1);
+//     HttpResponse::Ok().body(result.to_string())
+// }
 
-    let n = (x - 4) % 12;
-    let mut s = String::new();
+// //library multiply route using lib.rs
+// #[get("/multiply/{a}/{b}")]
+// async fn multiply(info: web::Path<(i32, i32)>) -> impl Responder {
+//     let result = calc::multiply(info.0, info.1);
+//     HttpResponse::Ok().body(result.to_string())
+// }
 
-    if n == 0 {s.push_str("rat ");}
-    if n == 1 {s.push_str("ox ");}
-    if n == 2 {s.push_str("tiger ");}
-    if n == 3 {s.push_str("rabbit ");}
-    if n == 4 {s.push_str("dragon ");}
-    if n == 5 {s.push_str("snake ");}
-    if n == 6 {s.push_str("horse ");}
-    if n == 7 {s.push_str("goat ");}
-    if n == 8 {s.push_str("monkey ");}
-    if n == 9 {s.push_str("rooster ");}
-    if n == 10 {s.push_str("dog ");}
-    if n == 11 {s.push_str("pig ");}
+// //library divide route using lib.rs
+// #[get("/divide/{a}/{b}")]
+// async fn divide(info: web::Path<(i32, i32)>) -> impl Responder {
+//     let result = calc::divide(info.0, info.1);
+//     HttpResponse::Ok().body(result.to_string())
+// }
 
-    let result = s;
+// //run it
+// #[actix_web::main]
+// async fn main() -> std::io::Result<()> {
+//     HttpServer::new(|| {
+//         App::new()
+//             .service(index)
+//             .service(add)
+//             .service(subtract)
+//             .service(multiply)
+//             .service(divide)
+//     })
+//     .bind(("127.0.0.1", 8080))?
+//     .run()
+//     .await
+// }
 
+use actix_web::{get, web, App, HttpResponse, HttpServer, Responder};
 
-    println!("Your Chinese Zodiac is: {}", result);
+#[get("/")]
+async fn index() -> impl Responder {
+    HttpResponse::Ok().body(
+        "This is a Chinese Zodiac microservice.\n 
+    If result is 0, your Chinese Zodiac is rat. \n 
+    If result is 1, your Chinese Zodiac is ox.\n 
+    If result is 2, your Chinese Zodiac is tiger.\n 
+    If result is 3, your Chinese Zodiac is rabbit.\n 
+    If result is 4, your Chinese Zodiac is dragon.\n 
+    If result is 5, your Chinese Zodiac is snake.\n 
+    If result is 6, your Chinese Zodiac is horse.\n 
+    If result is 7, your Chinese Zodiac is goat.\n 
+    If result is 8, your Chinese Zodiac is monkey.\n 
+    If result is 9, your Chinese Zodiac is rooster.\n 
+    If result is 10, your Chinese Zodiac is dog.)\n 
+    If result is 11, your Chinese Zodiac is pig.)",
+    )
+}
+
+#[get("/cal/{a}/{b}")]
+async fn cal(info: web::Path<(i32, i32)>) -> impl Responder {
+    let result = calc::cal(info.0, info.1);
+    HttpResponse::Ok().body(result.to_string())
+}
+
+//run it
+#[actix_web::main]
+async fn main() -> std::io::Result<()> {
+    HttpServer::new(|| App::new().service(index).service(cal))
+        .bind(("127.0.0.1", 8080))?
+        .run()
+        .await
 }
