@@ -9,14 +9,14 @@ The Lunar New Year, or Spring Festival, marks the transition from one animal to 
 Therefore, people's birth year decided their Chinese zodiac.
 
 
-## References
-
-https://chinesenewyear.net/zodiac/\
-
-
 ## Goal
 * Learn to develop with rust
 * Be familiar with pushing source code to Github
 * Configure Build System to Deploy changes
 * Use AWS to deploy (EC2)
+
+
+## References
+
+https://chinesenewyear.net/zodiac/\
 
